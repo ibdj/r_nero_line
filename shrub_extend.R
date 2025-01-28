@@ -1,3 +1,7 @@
+library(tidyverse)
+
+nero_line_organised_raw_data <- readRDS("~/Library/CloudStorage/OneDrive-GrønlandsNaturinstitut/General - BioBasis/BioBasis_Nuuk_2022/NEROline_2022/r_nero_line/r_nero_line/nero_line_organised_raw_data.rds")
+
 #### Shrub extend ####
 
 shrub <- data_analysis |> 
@@ -161,8 +165,8 @@ ggplot(result_betnan, aes(x = year, y = percentage_betnan)) +
 
 #### number of plots with salgla pr section ####
 
-vt_count <- data_analysis %>%
-  group_by(year, veg_type, vt_section) %>%
+vt_count <- data_analysis |> 
+  group_by(year, veg_type, vt_section) |> 
   summarise(total_plots = n_distinct(plot_id), .groups = "drop")
 
 vt_shrub_count <- data_analysis %>%
@@ -176,7 +180,55 @@ vt_result <- left_join(vt_count, vt_shrub_count, by = c("year", "veg_type", "vt_
          percentage_shrub = (shrub_plots / total_plots) * 100) |> 
   filter(veg_type == "heath")
 
-plot(x = vt_result$year, y = vt_result$percentage_shrub)+
-  abline(vt_result$percentage_shrub ~ vt_result$year)
+ggplot(data = vt_result, aes(x = year, y = percentage_shrub))+
+  geom_point()+
+  geom_smooth(method = lm)
+  #abline(vt_result$percentage_shrub ~ vt_result$year)
+
+summary(lm(vt_result$percentage_shrub ~ vt_result$year,data = vt_result))
+
+# calculate salgla plot pr vt_section, method II ####
+
+plots_count <- func_type %>%
+  group_by(year, veg_type, vt_section) %>%
+  summarise(total_plots = n_distinct(plot_id), .groups = "drop")
+
+salgla <- data_analysis %>%
+  filter(taxon_code == 'salgla') %>%
+  group_by(year, veg_type, vt_section) %>%
+  summarise(salgla_plots = n_distinct(plot_id)) #, .groups = "drop"
+
+# Merge counts and calculate percentage
+result_salgla <- left_join(plots_count, salgla, by = c("year", "veg_type", "vt_section")) %>%
+  mutate(salgla_plots = coalesce(salgla_plots, 0),
+         percentage_salgla = (salgla_plots / total_plots) * 100)
+
+ggplot(result_salgla, aes(x = year, y = percentage_salgla))+
+  geom_point(alpha = 0.5)+
+  geom_smooth(method = lm, se =F)+
+  facet_wrap(~veg_type)
+
+
+#### number of plots with salgla in snowbed ####
+
+vt_count <- data_analysis |> 
+  group_by(year, veg_type, vt_section) |> 
+  summarise(total_plots = n_distinct(plot_id), .groups = "drop")
+
+vt_shrub_count <- data_analysis %>%
+  filter(taxon_code == 'salgla') %>%
+  group_by(year, veg_type, vt_section) %>%
+  summarise(shrub_plots = n_distinct(plot_id), .groups = "drop") |> 
+  filter(veg_type == "snowbed")
+
+vt_result <- left_join(vt_count, vt_shrub_count, by = c("year", "veg_type", "vt_section")) %>%
+  mutate(shrub_plots = coalesce(shrub_plots, 0),
+         percentage_shrub = (shrub_plots / total_plots) * 100) |> 
+  filter(veg_type == "snowbed")
+
+ggplot(data = vt_result, aes(x = year, y = percentage_shrub))+
+  geom_point()+
+  geom_smooth(method = lm)
+#abline(vt_result$percentage_shrub ~ vt_result$year)
 
 summary(lm(vt_result$percentage_shrub ~ vt_result$year,data = vt_result))

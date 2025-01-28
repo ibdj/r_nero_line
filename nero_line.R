@@ -63,7 +63,9 @@ data_analysis <- wo_nas |>
   filter(!(taxon_code %in% c("stecan", "camdis"))) |> 
   left_join(index_species, by = "taxon_code")
 
-# Making the final dataset (With correct names, removing the unknown species)
+write_rds(data_analysis, file = "nero_line_organised_raw_data.rds")
+
+#### Making the final dataset (With correct names, removing the unknown species)                    ####
 BioBasis_Nuuk_Raunkiaer_NERO_line <- wo_nas |> 
   left_join(index_veg_type, by = "vt_section") |> 
   left_join(index_coordinates, by = "plot_id") |> 
