@@ -1,0 +1,96 @@
+﻿Nr,Column1,vt,end,m,updated measurements,Vegetation type,Photos,Column3,Comments
+,VT,1,2,27,,snowpatch,419,433,No analysis
+,VT,2,3,8,,snowpatch,432,435,No analysis
+1,VT,3,4,28,,snowpatch,436,438,First analysis!
+2,VT,4,5,23,,snowpatch,439,444,
+3,VT,5,6,12,,snowpatch,445,446,"Five tubes on the transect, five one m west of the transect."
+4,VT,6,7,8,,snowpatch,448,450,"Starts with stones  three tubes on the transect, four one meter east of. "
+5,VT,7,8,39,,heath,451,454,
+6,VT,8,9,12,,heath,451,454,Five tubes on the transect and five east of the transect. 
+7,VT,9,10,32,,snowpatch,458,460,
+8,VT,10,11,-,,copse,461,463,Not possible to measure
+,VT,11,12,10,,riverbed,464,468,No analysis
+9,VT,12,13,80,,heath,469,471,
+10,VT,13,14,60,,copse,472,474,
+,VT,14,15,64,,riverbed,475,478,No analysis
+11,VT,15,16,19,,copse,479,481,
+,VT,16,17,4,,riverbed,482,485,No analysis
+12,VT,17,18,20,,copse,486,487,
+,VT,18,19,9,,riverbed,488,490,River bed
+13,VT,19,20,4,,copse,491,493,"One analysis on the transect, one west of and one east of. "
+14,VT,20,21,13,,heath,494,497,"Six on the transect, two west of and two east of. "
+15,VT,21,22,24,,copse,498,500,4th tube at 9m! 
+16,VT,22,23,101,,fen,504,505,
+17,VT,23,24,37,,heath,504,506,
+18,VT,24,25,15,,bedrock,507,509,No analysis
+19,VT,25,26,13,,heath,510,512,"Five on the transect (number three is bedrock), three west of, two east of."
+20,VT,26,27,6,,heath,513,515,"Two on the transect, two west of, two east of."
+21,VT,27,28,15,,heath,516,518,"Seven on the transect, two west of, one east of."
+22,VT,28,29,25,,heath,519,521,"Only seven on the transect, the rest is bedrock."
+23,VT,29,30,33,,heath,522,524,
+24,VT,30,31,26,,bedrock,525,527,Bedrock
+25,VT,31,32,26,,heath,528,530,
+26,VT,32,33,22,,bedrock,531,533,No analysis
+27,VT,33,34,15,,heath,534,536,
+28,VT,34,35,25,,heath,537,539,
+29,VT,35,36,6,,heath,540,541,"Two analyses on the transect, seven west of, one east of."
+30,VT,36,37,6,,snowpatch,542,544,"Two analyses on the transect, one west of, one east of."
+31,VT,37,38,4,,heath,545,547,"Two analyses on the transect, one west of, one east of."
+32,VT,38,39,3,,snowpatch,549,550,"Two analyses on the transect, one west of."
+33,VT,39,40,26,,heath,552,554,
+34,VT,40,41,,,lake,555,556,
+32,VT,41,42,14,,fen,557,559,"Six on the transect, three west of, one east of."
+,VT,42,43,,,river,560,563,Distance to the river 9m
+33,VT,43,44,13,,heath,564,567,"(4 m of bedrock before) Four on the transect, two west of, 4 east of."
+34,VT,44,45,53,,heath,570,572,
+,VT,45,46,20,,bedrock,573,574,No analysis
+35,VT,46,47,15,,heath,575,577,"Seven on the transect, two west of, one east of."
+36,VT,47,48,16,,heath,578,580,"Seven on the transect, two west of, one east of."
+37,VT,48,49,24,,fen,581,583,
+38,VT,49,50,6,,heath,584,586,"Two on the transect, one west of, one east of."
+39,VT,50,51,71,,fen,587,590,
+40,VT,51,52,4,,fen,591,593,
+41,VT,52,53,46,,heath,594,596,
+42,VT,53,54,5,,heath,597,599,"Two on the transect, one east of."
+43,VT,54,55,4,,fen,600,602,"Two on the transect, three west of."
+44,VT,55,56,48,,heath,603,605,
+45,VT,56,57,5,,heath,606,609,"Two on transect, one west of, one east of."
+46,VT,57,58,63,,heath,615,616,
+,VT,58,59,34,,bedrock,610,614,No analysis
+47,VT,59,60,37,,heath,617,619,
+48,VT,60,61,5,,heath,620,621,"Two on the transect, two west of, and two east of the transect."
+49,VT,61,62,11,,copse,622,623,"Five on the transect, two east of. "
+50,VT,62,63,152,,heath,624,625,
+51,VT,63,64,6,,heath,626,628,"Three on the transect, one east of the transect "
+52,VT,64,65,20,,heath,629,630,
+53,VT,65,66,25,,heath,631,633,
+54,VT,66,67,20,,heath,634,635,
+55,VT,67,68,21,,fen,636,637,
+56,VT,68,69,29,,fen,638,640,
+57,VT,69,70,129,,heath,641,642,
+58,VT,70,71,10,,heath,646,648,
+59,VT,71,72,12,,copse,649,650,
+60,VT,72,73,8,,heath,651,653,
+61,VT,73,74,16,,heath,654,656,
+62,VT,74,75,7,,heath,657,660,
+63,VT,75,76,,,copse,661,663,Beginning of Salix copse before steep slope 
+64,VT,76,77,90,,heath,988,991,
+65,VT,77,78,17,,snowpatch,992,995,
+66,VT,78,79,11,,copse,996,998,
+67,VT,79,80,11,,heath,999,2,
+,VT,80,81,,,bedrock,3,5,No analysis
+68,VT,81,82,84,,heath,,,
+,VT,82,83,25,,bedrock,,,
+69,VT,83,84,64,,heath,,,
+70,VT,84,85,,,,,,
+,,,,,,,,,
+1,VT,100,101,17,,heath,,,
+2,VT,101,102,16,,salt marsh,,,
+3,VT,102,103,,,bedrock,,,No analysis
+4,VT,103,104,123,,heath,,,
+5,VT,104,105,12,,fen,,,
+6,VT,105,106,18,,heath,,,
+,,106,107,38,,heath,,,
+,,,,,,,,,
+,VT,200,201,46,,abrasion,026-032 ,,"10 on the transect, 10 2 m south of."
+,,201,,,,,034-039,,
