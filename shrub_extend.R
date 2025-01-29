@@ -1,6 +1,6 @@
 library(tidyverse)
 
-nero_line_organised_raw_data <- readRDS("~/Library/CloudStorage/OneDrive-GrønlandsNaturinstitut/General - BioBasis/BioBasis_Nuuk_2022/NEROline_2022/r_nero_line/r_nero_line/nero_line_organised_raw_data.rds")
+data_analysis <- readRDS("~/Library/CloudStorage/OneDrive-GrønlandsNaturinstitut/General - BioBasis/BioBasis_Nuuk_2022/NEROline_2022/r_nero_line/r_nero_line/nero_line_organised_raw_data.rds")
 
 #### Shrub extend ####
 
@@ -225,6 +225,32 @@ vt_result <- left_join(vt_count, vt_shrub_count, by = c("year", "veg_type", "vt_
   mutate(shrub_plots = coalesce(shrub_plots, 0),
          percentage_shrub = (shrub_plots / total_plots) * 100) |> 
   filter(veg_type == "snowbed")
+
+ggplot(data = vt_result, aes(x = year, y = percentage_shrub))+
+  geom_point()+
+  geom_smooth(method = lm)
+#abline(vt_result$percentage_shrub ~ vt_result$year)
+
+summary(lm(vt_result$percentage_shrub ~ vt_result$year,data = vt_result))
+
+### bet nan in snowbed ####
+
+#### number of plots with bet nan in fen ####
+
+vt_count <- data_analysis |> 
+  group_by(year, veg_type, vt_section) |> 
+  summarise(total_plots = n_distinct(plot_id), .groups = "drop")
+
+vt_shrub_count <- data_analysis %>%
+  filter(taxon_code == 'betnan') %>%
+  group_by(year, veg_type, vt_section) %>%
+  summarise(shrub_plots = n_distinct(plot_id), .groups = "drop") |> 
+  filter(veg_type == "fen")
+
+vt_result <- left_join(vt_count, vt_shrub_count, by = c("year", "veg_type", "vt_section")) %>%
+  mutate(shrub_plots = coalesce(shrub_plots, 0),
+         percentage_shrub = (shrub_plots / total_plots) * 100) |> 
+  filter(veg_type == "fen")
 
 ggplot(data = vt_result, aes(x = year, y = percentage_shrub))+
   geom_point()+
